@@ -1,6 +1,6 @@
 /*--------------------------------------------------------------------*/
 /* replace.c                                                          */
-/* Author: ???                                                        */
+/* Author: Eesha Agarwal                                              */
 /*--------------------------------------------------------------------*/
 
 #include "str.h"
@@ -14,15 +14,51 @@
    and return 0.  Otherwise write string pcLine to stdout with each
    distinct occurrence of string pcFrom replaced with string pcTo,
    and return a count of how many replacements were made.  Make no
-   assumptions about the maximum number of replacements or the
+   assumptions about the maximum number o
+f replacements or the
    maximum number of characters in strings pcLine, pcFrom, or pcTo. */
 
 static size_t replaceAndWrite(const char *pcLine,
-                              const char *pcFrom, const char *pcTo)
-{
-   /* Insert your code here. */
-}
+                              const char *pcFrom, const char *pcTo) {
+   const char *occurrence;
+   size_t numOccurrences = 0;
+   size_t fromLength = Str_getLength(pcFrom);
+   const char *lineEnd = pcLine;
 
+   assert(pcLine != NULL);
+   assert(pcFrom != NULL);
+   assert(pcTo != NULL);
+
+   /* If pcFrom is the empty string, writing string pcLine to stdout
+      and returning 0. */
+   if (*pcFrom == '\0') {
+      printf(pcLine);
+      return 0;
+   }
+
+   /* Running a loop for the length of pcLine. */
+   while (*lineEnd != '\0') {
+      occurrence = Str_search(lineEnd, pcFrom);
+      /* If the present pointer is equal to the pointer for the
+         beginning of the substring, writing replacement word to
+         stdOut. Else, writing the character as is. */
+      if (lineEnd != occurrence) {
+         putchar(*lineEnd);
+
+         /* Incrementing the pointer. */
+         lineEnd++;
+      }
+      /* If present pointer is equal to the pointer for the beginning
+         of the substring, incrementing pointer by length of word being
+         replaced. */
+      else {
+         printf("%s", pcTo);
+         numOccurrences++;
+         lineEnd += fromLength;
+      }
+   }
+   return numOccurrences;
+}
 /*--------------------------------------------------------------------*/
 
 /* If argc is unequal to 3, then write an error message to stderr and
@@ -55,8 +91,9 @@ int main(int argc, char *argv[])
    pcFrom = argv[1];
    pcTo = argv[2];
 
-   while (fgets(acLine, MAX_LINE_SIZE, stdin) != NULL)
-      /* Insert your code here. */
+   while (fgets(acLine, MAX_LINE_SIZE, stdin) != NULL) {
+      uReplaceCount += replaceAndWrite(acLine, pcFrom, pcTo);
+   }
 
    fprintf(stderr, "%lu replacements\n", (unsigned long)uReplaceCount);
    return 0;

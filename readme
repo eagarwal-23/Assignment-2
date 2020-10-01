@@ -3,12 +3,12 @@ Assignment 2 readme File
 ------------------------------------------------------------------------
 What is your name?
 
-
+Eesha Agarwal
 
 ------------------------------------------------------------------------
 How many late days are you using on this assignment?
 
-
+0
 
 ------------------------------------------------------------------------
 What authorized sources of information did you use to complete
@@ -16,7 +16,25 @@ the assignment? COPY THE LIST of authorized sources of information
 given in the "Policies" web page to this section of the readme file,
 and edit it as appropriate.
 
+The course's lectures.
 
+The course's precepts.
+
+The course's website.
+
+Documents that are referenced directly by the course's website.
+Such documents include the course's lecture slides and precept handouts.
+
+The course's textbooks.
+
+The man pages on the armlab cluster.
+
+The course's current staff members outside of class time through
+meetings.
+
+The course's current staff members outside of class time through Ed.
+
+Current lab teaching assistants through visits to the course labs.
 
 ------------------------------------------------------------------------
 What unauthorized sources of information did you use to complete the
@@ -30,12 +48,15 @@ interaction, may additionally require the interaction being reported
 to the Committee on Discipline. Write "None" if you used no
 unauthorized sources of information.
 
+None
 
 
 ------------------------------------------------------------------------
 What is your assessment of the assignment? Was it helpful? Was it fun?
 
-
+It was definitely an enjoyable assessment. I was very daunted by the
+idea of working with pointers, but this assignment helped me understand
+them much butter.
 
 ------------------------------------------------------------------------
 (optional) What information can you provide about your submission that
@@ -50,7 +71,7 @@ disagreements with them? Copy the splint warnings here, and express your
 disagreement after each warning. If there are no warnings, then write
 "None."
 
-
+None.
 
 ------------------------------------------------------------------------
 What warnings does critTer generate on stra.c, and what are your
@@ -58,7 +79,7 @@ disagreements with them? Copy the critTer warnings here, and express
 your disagreement after each warning. If there are no warnings, then
 write "None."
 
-
+None.
 
 ------------------------------------------------------------------------
 What warnings does splint generate on strp.c, and what are your
@@ -66,7 +87,7 @@ disagreements with them? Copy the splint warnings here, and express your
 disagreement after each warning. If there are no warnings, then write
 "None."
 
-
+None.
 
 ------------------------------------------------------------------------
 What warnings does critTer generate on strp.c, and what are your
@@ -82,7 +103,7 @@ disagreements with them? Copy the splint warnings here, and express your
 disagreement after each warning. If there are no warnings, then write
 "None."
 
-
+None.
 
 ------------------------------------------------------------------------
 What warnings does critTer generate on replace.c, and what are your
@@ -90,13 +111,28 @@ disagreements with them? Copy the critTer warnings here, and express
 your disagreement after each warning. If there are no warnings, then
 write "None."
 
-
+None.
 
 ------------------------------------------------------------------------
 Is it possible for Str_copy or Str_concat to call assert to verify
 that the destination memory area specified by the caller is large
 enough? Explain.
 
-
+I think, theoretically, it would not be possible to call assert to
+verify whether the destination memory is large enough in the case of
+Str_copy or Str_concat. While one would assume that it would be possible
+to do so by simply asserting whether the length of the destination is
+greater than or equal to the length of the source. However, the issue
+that would arise is that the length is being checked for by looking for
+a null terminating character. Since it is possible for the destination
+array to contain null elements, it might be possible that there is
+sufficient memory area for the destination even after the null
+terminating character (as is the case for standard concat function calls
+since the concat function begins adding the new string at the position
+of the previous null pointer. Since it is difficult to then find the
+length of the destination memory (since it can be sufficient but contain
+null characters), I don't think it is possible to call assert to verify
+that the destination memory area specified by the caller is large enough
+for the Str_concat and Str_copy functions.
 
 ------------------------------------------------------------------------
