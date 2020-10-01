@@ -18,6 +18,7 @@
 size_t Str_getLength(const char *strArray) {
    const char *strEnd;
 
+   /* Ensuring that the input parameter is not null. */
    assert(strArray != NULL);
    strEnd = strArray;
 
@@ -38,6 +39,7 @@ char *Str_copy(char *strArrayDest,
    char *destEnd;
    const char *srcEnd;
 
+   /* Ensuring that the input parameters are not null. */
    assert(strArrayDest != NULL);
    assert(strArraySource != NULL);
 
@@ -62,6 +64,7 @@ char *Str_concat(char *strArrayDest,
    char *destEnd;
    const char *srcEnd;
 
+   /* Ensuring that the input parameters are not null. */
    assert(strArrayDest != NULL);
    assert(strArraySource != NULL);
 
@@ -97,6 +100,7 @@ int Str_compare(const char *strArrayThis,
    const char *thisEnd;
    const char *thatEnd;
 
+   /* Ensuring that the input parameters are not null. */
    assert(strArrayThis != NULL);
    assert(strArrayThat != NULL);
 
@@ -138,9 +142,11 @@ char *Str_search(const char *strArrayString,
    int patternLength = 0;
    int stringLength = 0;
 
+   /* Ensuring that the input parameters are not null. */
    assert(strArrayString != NULL);
    assert(strArrayPattern != NULL);
 
+   /* Setting the string pointer to the beginning of the array. */
    stringEnd = strArrayString;
    patternEnd = strArrayPattern;
 

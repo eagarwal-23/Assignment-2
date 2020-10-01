@@ -18,6 +18,7 @@
 size_t Str_getLength(const char strArray[]) {
    size_t length = 0;
 
+   /* Ensuring that the input parameter is  not null. */
    assert(strArray != NULL);
 
    /* Counting the number of elements in the array
@@ -35,6 +36,7 @@ char *Str_copy(char strArrayDest[],
                const char strArraySource[]) {
    size_t index = 0;
 
+   /* Ensuring that the input parameters are not null. */
    assert(strArrayDest != NULL);
    assert(strArraySource != NULL);
    /* Running a loop for the length of strArraySource
@@ -57,7 +59,8 @@ char *Str_concat(char strArrayDest[],
                  const char strArraySource[]) {
    size_t srcIndex = 0;
    size_t destIndex = 0;
-
+   
+   /* Ensuring that the input parameters are not null. */
    assert(strArrayDest != NULL);
    assert(strArraySource != NULL);
 
@@ -92,6 +95,7 @@ int Str_compare(const char strArrayThis[],
                 const char strArrayThat[]) {
    size_t index = 0;
 
+   /* Ensuring that the input parameters are not null. */
    assert(strArrayThis != NULL);
    assert(strArrayThat != NULL);
 
@@ -133,6 +137,7 @@ char *Str_search(const char strArrayString[],
    size_t indexP = 0;
    size_t indexS = 0;
 
+   /* Ensuring that the input parameters are not null. */
    assert(strArrayString != NULL);
    assert(strArrayPattern != NULL);
 
@@ -141,7 +146,8 @@ char *Str_search(const char strArrayString[],
       return (char*) strArrayString;
    }
 
-   /* Running the loop while both strings have not terminated. */
+   /* Running the loop while both strings have not terminated.
+      Incrementing the index for strArrayString. */
    while (strArrayString[indexS] != '\0' &&
           strArrayPattern[indexP] != '\0') {
 

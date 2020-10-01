@@ -926,7 +926,8 @@ extern void __assert (const char *__assertion, const char *__file, int __line)
 size_t Str_getLength(const char *strArray) {
    const char *strEnd;
 
-   ((strArray != ((void *)0)) ? (void) (0) : __assert_fail ("strArray != ((void *)0)", "strp.c", 21, __PRETTY_FUNCTION__));
+
+   ((strArray != ((void *)0)) ? (void) (0) : __assert_fail ("strArray != ((void *)0)", "strp.c", 22, __PRETTY_FUNCTION__));
    strEnd = strArray;
 
 
@@ -946,8 +947,9 @@ char *Str_copy(char *strArrayDest,
    char *destEnd;
    const char *srcEnd;
 
-   ((strArrayDest != ((void *)0)) ? (void) (0) : __assert_fail ("strArrayDest != ((void *)0)", "strp.c", 41, __PRETTY_FUNCTION__));
-   ((strArraySource != ((void *)0)) ? (void) (0) : __assert_fail ("strArraySource != ((void *)0)", "strp.c", 42, __PRETTY_FUNCTION__));
+
+   ((strArrayDest != ((void *)0)) ? (void) (0) : __assert_fail ("strArrayDest != ((void *)0)", "strp.c", 43, __PRETTY_FUNCTION__));
+   ((strArraySource != ((void *)0)) ? (void) (0) : __assert_fail ("strArraySource != ((void *)0)", "strp.c", 44, __PRETTY_FUNCTION__));
 
 
 
@@ -970,8 +972,9 @@ char *Str_concat(char *strArrayDest,
    char *destEnd;
    const char *srcEnd;
 
-   ((strArrayDest != ((void *)0)) ? (void) (0) : __assert_fail ("strArrayDest != ((void *)0)", "strp.c", 65, __PRETTY_FUNCTION__));
-   ((strArraySource != ((void *)0)) ? (void) (0) : __assert_fail ("strArraySource != ((void *)0)", "strp.c", 66, __PRETTY_FUNCTION__));
+
+   ((strArrayDest != ((void *)0)) ? (void) (0) : __assert_fail ("strArrayDest != ((void *)0)", "strp.c", 68, __PRETTY_FUNCTION__));
+   ((strArraySource != ((void *)0)) ? (void) (0) : __assert_fail ("strArraySource != ((void *)0)", "strp.c", 69, __PRETTY_FUNCTION__));
 
 
 
@@ -1005,8 +1008,9 @@ int Str_compare(const char *strArrayThis,
    const char *thisEnd;
    const char *thatEnd;
 
-   ((strArrayThis != ((void *)0)) ? (void) (0) : __assert_fail ("strArrayThis != ((void *)0)", "strp.c", 100, __PRETTY_FUNCTION__));
-   ((strArrayThat != ((void *)0)) ? (void) (0) : __assert_fail ("strArrayThat != ((void *)0)", "strp.c", 101, __PRETTY_FUNCTION__));
+
+   ((strArrayThis != ((void *)0)) ? (void) (0) : __assert_fail ("strArrayThis != ((void *)0)", "strp.c", 104, __PRETTY_FUNCTION__));
+   ((strArrayThat != ((void *)0)) ? (void) (0) : __assert_fail ("strArrayThat != ((void *)0)", "strp.c", 105, __PRETTY_FUNCTION__));
 
 
    for (thisEnd = strArrayThis, thatEnd = strArrayThat;
@@ -1046,8 +1050,10 @@ char *Str_search(const char *strArrayString,
    int patternLength = 0;
    int stringLength = 0;
 
-   ((strArrayString != ((void *)0)) ? (void) (0) : __assert_fail ("strArrayString != ((void *)0)", "strp.c", 141, __PRETTY_FUNCTION__));
-   ((strArrayPattern != ((void *)0)) ? (void) (0) : __assert_fail ("strArrayPattern != ((void *)0)", "strp.c", 142, __PRETTY_FUNCTION__));
+
+   ((strArrayString != ((void *)0)) ? (void) (0) : __assert_fail ("strArrayString != ((void *)0)", "strp.c", 146, __PRETTY_FUNCTION__));
+   ((strArrayPattern != ((void *)0)) ? (void) (0) : __assert_fail ("strArrayPattern != ((void *)0)", "strp.c", 147, __PRETTY_FUNCTION__));
+
 
    stringEnd = strArrayString;
    patternEnd = strArrayPattern;
